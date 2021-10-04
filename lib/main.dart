@@ -9,10 +9,10 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const apps = {
+  static const apps = [
     App('Camp', CampWidget()),
     App('Business Card', BusinessCardWidget()),
-  };
+  ];
 
   @override
   Widget build(BuildContext context) {

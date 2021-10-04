@@ -29,7 +29,7 @@ class BusinessCardWidget extends StatelessWidget {
                 ),
                 const Text(
                   'Experienced App Developer',
-                )
+                ),
               ],
             ),
           ]),
@@ -54,7 +54,7 @@ class BusinessCardWidget extends StatelessWidget {
               Icon(Icons.phone_android),
               Icon(Icons.phone_iphone),
             ],
-          )
+          ),
         ],
       ),
     );

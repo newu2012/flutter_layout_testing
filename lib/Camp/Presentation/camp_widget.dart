@@ -78,7 +78,9 @@ class CampWidget extends StatelessWidget {
 
   TextButton _buildButtonColumn(Color color, IconData icon, String label) {
     return TextButton(
-      onPressed: () {},
+      onPressed: () {
+        //  TODO: add pressed function
+      },
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
