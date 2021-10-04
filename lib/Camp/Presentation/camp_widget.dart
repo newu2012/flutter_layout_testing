@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_test_test_test/Camp/Presentation/favorite_widget.dart';
 
 class CampWidget extends StatelessWidget {
   const CampWidget({Key? key}) : super(key: key);
@@ -36,11 +37,7 @@ class CampWidget extends StatelessWidget {
               ],
             ),
           ),
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
-          const Text('41'),
+          const FavoriteWidget(),
         ],
       ),
     );
