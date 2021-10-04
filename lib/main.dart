@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_test_test_test/BusinessCard/Presentation/business_card_widget.dart';
 import 'package:test_test_test_test/Camp/Presentation/camp_widget.dart';
+import 'package:test_test_test_test/StateBoxes/Presentation/box_state_parent_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   static const apps = [
     App('Camp', CampWidget()),
     App('Business Card', BusinessCardWidget()),
+    App('Box State', BoxStateParentWidget()),
   ];
 
   @override
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(
         //  Choose your app there by selecting app by it's title
-        app: apps.firstWhere((element) => element.appTitle == 'Camp'),
+        app: apps.firstWhere((element) => element.appTitle == 'Box State'),
       ),
     );
   }
