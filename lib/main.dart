@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:test_test_test_test/BusinessCard/Presentation/business_card_widget.dart';
-import 'package:test_test_test_test/Camp/Presentation/camp_widget.dart';
-import 'package:test_test_test_test/StateBoxes/Presentation/box_state_parent_widget.dart';
+
+import 'BusinessCard/Presentation/business_card_widget.dart';
+import 'Camp/Presentation/camp_widget.dart';
+import 'StateBoxes/Presentation/box_state_parent_widget.dart';
+import 'Recipes/Presentation/recipe_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,22 +12,30 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const apps = [
+  static const apps = {
     App('Camp', CampWidget()),
     App('Business Card', BusinessCardWidget()),
     App('Box State', BoxStateParentWidget()),
-  ];
+    App('Recipe Calculator', RecipeWidget()),
+  };
 
   @override
   Widget build(BuildContext context) {
+    late final app =
+        apps.firstWhere((element) => element.appTitle == 'Recipe Calculator');
+
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: '${app.appTitle} Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        colorScheme: ThemeData().colorScheme.copyWith(
+              primary: Colors.blue,
+              secondary: Colors.black,
+            ),
       ),
       home: MyHomePage(
         //  Choose your app there by selecting app by it's title
-        app: apps.firstWhere((element) => element.appTitle == 'Box State'),
+        app: app,
       ),
     );
   }
@@ -57,8 +67,10 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.app.appTitle),
       ),
-      body: Center(
-        child: widget.app.appWidget,
+      body: SafeArea(
+        child: Center(
+          child: widget.app.appWidget,
+        ),
       ),
     );
   }
