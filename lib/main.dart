@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'Fooderlich/Presentation/fooderlich_theme.dart';
+import 'Fooderlich/fooderlich_theme.dart';
 
 import 'BusinessCard/Presentation/business_card_widget.dart';
 import 'Camp/Presentation/camp_widget.dart';
-import 'Fooderlich/Presentation/fooderlich_widget.dart';
+import 'Fooderlich/fooderlich_widget.dart';
 import 'StateBoxes/Presentation/box_state_parent_widget.dart';
 import 'Recipes/Presentation/recipe_widget.dart';
 import 'app.dart';

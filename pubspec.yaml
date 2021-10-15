@@ -23,5 +23,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - images/lake.jpg
     - assets/
+    - assets/TravelApp/
+    - assets/FooderlichApp/
+    - assets/FooderlichApp/food_pics/
+    - assets/FooderlichApp/magazine_pics/
+    - assets/FooderlichApp/profile_pics/
+    - assets/FooderlichApp/sample_data/

@@ -9,7 +9,7 @@ class CampWidget extends StatelessWidget {
     final color = Theme.of(context).primaryColor;
 
     final Widget imageSection = Image.asset(
-      'images/lake.jpg',
+      'lake.jpg',
       width: 600,
       height: 240,
       fit: BoxFit.cover,

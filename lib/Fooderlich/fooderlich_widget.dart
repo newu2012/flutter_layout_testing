@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'card1.dart';
-import 'card2.dart';
-import 'card3.dart';
+import 'screens/explore_screen.dart';
+import 'screens/recipes_screen.dart';
 
 class FooderlichWidget extends StatefulWidget {
   const FooderlichWidget({Key? key}) : super(key: key);
@@ -14,9 +13,9 @@ class _FooderlichWidgetState extends State<FooderlichWidget> {
   int _selectedIndex = 0;
 
   static List<Widget> pages = <Widget>[
-    const Card1(),
-    const Card2(),
-    const Card3(),
+    ExploreScreen(),
+    RecipesScreen(),
+    Container(color: Colors.blue),
   ];
 
   void _onItemTapped(int index) {
@@ -36,21 +35,21 @@ class _FooderlichWidgetState extends State<FooderlichWidget> {
       ),
       body: pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Theme.of(context).textSelectionTheme.selectionColor,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: Theme.of(context).textSelectionTheme.selectionColor,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.task),
-            label: 'Courses',
+            icon: Icon(Icons.explore),
+            label: 'Explore',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.sticky_note_2),
+            icon: Icon(Icons.book),
             label: 'Recipes',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.trending_up),
-            label: 'Trends',
+            icon: Icon(Icons.list),
+            label: 'To Buy',
           ),
         ],
       ),

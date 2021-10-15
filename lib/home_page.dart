@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Fooderlich/Presentation/fooderlich_widget.dart';
+import 'Fooderlich/fooderlich_widget.dart';
 
 import 'app.dart';
 
