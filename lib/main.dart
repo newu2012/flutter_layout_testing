@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'Fooderlich/fooderlich_theme.dart';
 
 import 'BusinessCard/Presentation/business_card_widget.dart';
 import 'Camp/Presentation/camp_widget.dart';
 import 'Fooderlich/fooderlich_widget.dart';
+import 'Fooderlich/models/grocery_manager.dart';
 import 'StateBoxes/Presentation/box_state_parent_widget.dart';
 import 'Recipes/Presentation/recipe_widget.dart';
 import 'app.dart';
 import 'home_page.dart';
+import 'tab_manager.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,9 +45,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '${app.appTitle} Demo',
       theme: theme,
-      home: HomePage(
-        //  Choose your app there by selecting app by it's title
-        app: app,
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => TabManager()),
+          ChangeNotifierProvider(create: (context) => GroceryManager()),
+        ],
+        child: HomePage(
+          //  Choose your app there by selecting app by it's title
+          app: app,
+        ),
       ),
     );
   }
