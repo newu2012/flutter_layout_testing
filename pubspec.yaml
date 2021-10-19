@@ -1,7 +1,7 @@
 name: test_test_test_test
 description: A new Flutter project.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
@@ -11,6 +11,11 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.3
+  google_fonts: ^2.1.0
+  provider: ^6.0.1
+  flutter_colorpicker: ^0.6.0
+  intl: ^0.17.0
+  uuid: ^3.0.5
 
 dev_dependencies:
   flutter_test:
@@ -22,5 +27,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - images/lake.jpg
     - assets/
+    - assets/TravelApp/
+    - assets/FooderlichApp/
+    - assets/FooderlichApp/food_pics/
+    - assets/FooderlichApp/magazine_pics/
+    - assets/FooderlichApp/profile_pics/
+    - assets/FooderlichApp/sample_data/
+    - assets/FooderlichApp/fooderlich_assets/

@@ -1,4 +1,4 @@
-import 'package:test_test_test_test/Recipes/Domain/ingredient.dart';
+import 'ingredient.dart';
 
 class Recipe {
   String label;

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:test_test_test_test/Camp/Presentation/favorite_widget.dart';
+import 'favorite_widget.dart';
 
 class CampWidget extends StatelessWidget {
   const CampWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Color color = Theme.of(context).primaryColor;
+    final color = Theme.of(context).primaryColor;
 
-    Widget imageSection = Image.asset(
-      'images/lake.jpg',
+    final Widget imageSection = Image.asset(
+      'lake.jpg',
       width: 600,
       height: 240,
       fit: BoxFit.cover,
     );
 
-    Widget titleSection = Container(
+    final Widget titleSection = Container(
       padding: const EdgeInsets.all(32),
       child: Row(
         children: [
@@ -42,7 +42,7 @@ class CampWidget extends StatelessWidget {
       ),
     );
 
-    Widget buttonSection = Row(
+    final Widget buttonSection = Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         _buildButtonColumn(color, Icons.call, 'CALL'),
@@ -51,7 +51,7 @@ class CampWidget extends StatelessWidget {
       ],
     );
 
-    Widget textSection = const Padding(
+    const Widget textSection = Padding(
       padding: EdgeInsets.all(32),
       child: SelectableText(
         'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
