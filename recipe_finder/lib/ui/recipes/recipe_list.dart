@@ -1,6 +1,7 @@
 import 'dart:math';
+import 'package:chopper/chopper.dart';
+import '../../network/model_response.dart';
 
-import 'dart:convert';
 import '../../network/recipe_model.dart';
 import 'package:flutter/services.dart';
 import '../recipe_card.dart';
@@ -33,11 +34,7 @@ class _RecipeListState extends State<RecipeList> {
   bool inErrorState = false;
   List<String> previousSearches = <String>[];
 
-  Future<APIRecipeQuery> getRecipeData(String query, int from, int to) async {
-    final recipeJson = await RecipeService().getRecipes(query, from, to);
-    final recipeMap = json.decode(recipeJson);
-    return APIRecipeQuery.fromJson(recipeMap);
-  }
+
 
   @override
   void initState() {
@@ -197,9 +194,11 @@ class _RecipeListState extends State<RecipeList> {
     if (searchTextController.text.length < 3) {
       return Container();
     }
-    return FutureBuilder<APIRecipeQuery>(
-      future: getRecipeData(searchTextController.text.trim(),
-          currentStartPosition, currentEndPosition),
+    return FutureBuilder<Response<Result<APIRecipeQuery>>>(
+      future: RecipeService.create().queryRecipes(
+          searchTextController.text.trim(),
+          currentStartPosition,
+          currentEndPosition),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.hasError) {
@@ -210,7 +209,12 @@ class _RecipeListState extends State<RecipeList> {
           }
 
           loading = false;
-          final query = snapshot.data;
+          final result = snapshot.data?.body;
+          if (result is Error) {
+            inErrorState = true;
+            return _buildRecipeList(context, currentSearchList);
+          }
+          final query = (result as Success).value;
           inErrorState = false;
           if (query != null) {
             currentCount = query.count;
