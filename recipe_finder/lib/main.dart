@@ -5,7 +5,9 @@ import 'package:provider/provider.dart';
 
 import 'data/memory_repository.dart';
 import 'ui/main_screen.dart';
-import 'mock_service/mock_service.dart';
+import 'data/repository.dart';
+import 'network/recipe_service.dart';
+import 'network/service_interface.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,12 +23,12 @@ class MyApp extends StatelessWidget {
 
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<MemoryRepository>(
+        Provider<Repository>(
           create: (_) => MemoryRepository(),
           lazy: false,
         ),
-        Provider(
-          create: (_) => MockService()..create(),
+        Provider<ServiceInterface>(
+          create: (_) => RecipeService.create(),
           lazy: false,
         ),
       ],
