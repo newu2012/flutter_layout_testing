@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "721010038207",
+    "project_id": "newu-flutter-test",
+    "storage_bucket": "newu-flutter-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721010038207:android:66a9f22fefd786d8bd3d0a",
+        "android_client_info": {
+          "package_name": "com.raywanderlich.RayChat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721010038207-b4ngq1vorhc03hjkqtgnd7h2ed1jd13p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAVLlaKDtBNGgzehwsWDVq5064B3IypBw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721010038207-b4ngq1vorhc03hjkqtgnd7h2ed1jd13p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
